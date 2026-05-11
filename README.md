@@ -17,3 +17,7 @@ Penggunaan URL yang sama berarti program **Publisher** dan **Subscriber** terhub
 ### Screenshot Sending and Processing Event
 ![Screenshot Sending and Processing Event](image-2.png)
 Saat `cargo run` dijalankan pada publisher, ia mengirimkan 5 event/pesan ke RabbitMQ. Subscriber yang sudah dalam kondisi 'listen' akan langsung menerima dan memproses pesan tersebut, yang dibuktikan dengan munculnya log pesan pada konsol subscriber.
+
+### Monitoring Chart based on Publisher
+![### Monitoring Chart based on Publisher](image-3.png)
+Lonjakan (spike) pada grafik 'Message rates' terjadi setiap kali publisher dijalankan. Hal ini karena ada pengiriman pesan secara masif dalam waktu singkat ke broker. Grafik naik saat pesan dikirim (Publish) dan turun kembali saat semua pesan telah diterima oleh broker atau diproses oleh subscriber.
